@@ -1,9 +1,7 @@
-const express=require('express')
-const Admin=require('../models/admin')
+import express from 'express';
 const router=new express.Router()
 
 
+router.post('/')
 
 
-
-module.exports=router
