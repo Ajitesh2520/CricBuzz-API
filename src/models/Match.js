@@ -22,7 +22,7 @@ export const Match= sequelize.define(
      },
 
       date: {
-         type: DataTypes.DATE,
+         type: DataTypes.STRING,
          allowNull: false,
         
       },
@@ -35,6 +35,10 @@ export const Match= sequelize.define(
       {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      squad:{
+        type:DataTypes.JSON,
+        allowNull:false
       }
    },
    {

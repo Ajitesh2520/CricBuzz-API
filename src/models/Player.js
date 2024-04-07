@@ -47,5 +47,6 @@ allowNull:false
    }
    
 );
+
 Player.belongsTo(Team, { foreignKey: 'team_id' }); 
 

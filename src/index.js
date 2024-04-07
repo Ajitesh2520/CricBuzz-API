@@ -1,10 +1,16 @@
 import express from 'express';
 
-import {Match} from './models/Match.js';
-import {Team} from './models/Team.js';
-import {Player} from './models/Player.js';
-import {User} from './models/User.js';
+// import {Match} from './models/Match.js';
+// import {Team} from './models/Team.js';
+// import {Player} from './models/Player.js';
+// import {User} from './models/User.js';
 
+
+import adminRoutes from './routers/admin.js'
+import matchRoutes from './routers/match.js'
+import teamRoutes from './routers/team.js'
+import playerRoutes from './routers/player.js'
+import userRoutes from './routers/user.js'
 
 // require('./db/database')
 import cookieParser from 'cookie-parser';
@@ -19,6 +25,11 @@ const port=process.env.PORT || 3000
 
 app.use(express.json())
 app.use(cookieParser());
+app.use('/api/admin',adminRoutes)
+app.use('/api/match',matchRoutes)
+app.use('/api/team',teamRoutes)
+app.use('/api/player',playerRoutes)
+app.use('/api/user',userRoutes)
 
 sequelize.authenticate().then(async()=>{
     await syncDatabase()
