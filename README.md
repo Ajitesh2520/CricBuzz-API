@@ -11,3 +11,4 @@
 - API tested all routes
 - Implemented signin/signup functionality
 - User Role Validation
+- Routes Updated with all the functionalities
