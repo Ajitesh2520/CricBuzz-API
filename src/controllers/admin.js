@@ -15,6 +15,7 @@ export const signup=async(req,res,next)=>{
     }
     catch(err){
         console.log(err);
+        res.status(400).send(e)
     }
 }
 export const signin=async(req,res,next)=>{
@@ -37,6 +38,7 @@ export const signin=async(req,res,next)=>{
         res.cookie('access_token',token,{maxAge:24*60*60*1000,httpOnly:true,sameSite:'none',secure:true}).status(200).json(user);
     }catch(err){
         console.log(err);
+        res.status(400).send(e)
     }
 }
 

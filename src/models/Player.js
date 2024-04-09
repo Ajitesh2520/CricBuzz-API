@@ -48,5 +48,5 @@ allowNull:false
    
 );
 
-Player.belongsTo(Team, { foreignKey: 'team_id' }); 
+// Player.belongsTo(Team, { foreignKey: 'team_id' }); 
 

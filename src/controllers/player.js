@@ -24,5 +24,20 @@ export const createPlayer=async(req,res,next)=>{
         res.status(200).json(player)
     }catch(e){
 console.log("error",e)
+res.status(400).send(e)
+    }
+}
+export const getPlayer=async(req,res)=>{
+    try{
+        const player=await Player.findOne({where:{
+            player_id:req.params.player_id
+        }})
+        if(!player){
+            throw new Error("Player doesnt exist")
+        }
+        res.status(200).json(player)
+    }catch(e){
+        console.log("error",e)
+        res.status(400).send(e)
     }
 }

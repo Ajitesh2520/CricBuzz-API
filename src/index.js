@@ -10,12 +10,13 @@ import adminRoutes from './routers/admin.js'
 import matchRoutes from './routers/match.js'
 import teamRoutes from './routers/team.js'
 import playerRoutes from './routers/player.js'
-import userRoutes from './routers/user.js'
+// import userRoutes from './routers/user.js'
 
 // require('./db/database')
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv'
 import sequelize from './db/database.js';
+import './models/associations.js'
 const app=express()
 
 dotenv.config()
@@ -29,7 +30,7 @@ app.use('/api/admin',adminRoutes)
 app.use('/api/match',matchRoutes)
 app.use('/api/team',teamRoutes)
 app.use('/api/player',playerRoutes)
-app.use('/api/user',userRoutes)
+// app.use('/api/user',userRoutes)
 
 sequelize.authenticate().then(async()=>{
     await syncDatabase()
