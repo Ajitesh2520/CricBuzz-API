@@ -6,8 +6,8 @@ export const Player= sequelize.define(
    {
      
     player_id: {
-         type: DataTypes.UUID,
-         defaultValue: UUIDV4,
+         type: DataTypes.INTEGER,
+         defaultValue: 0,
          primaryKey: true,
       },
 

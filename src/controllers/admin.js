@@ -9,7 +9,7 @@ export const signup=async(req,res,next)=>{
         const hashedPassword=bcrypt.hashSync(req.body.password,salt);
         const newUser={...req.body,password:hashedPassword};
         const user=await User.create(newUser)
-        const token=jwt.sign({id:user.id},process.env.JWT);
+        const token=jwt.sign({id:user.id,role:user.role},process.env.JWT);
         const {password,...others}=user;
         res.cookie('access_token',token,{maxAge:24*60*60*1000,httpOnly:true,sameSite:'none',secure:true}).status(200).json(user);
     }
@@ -27,11 +27,12 @@ export const signin=async(req,res,next)=>{
         if(!user){
             return next(createError(404,'user not found'));
         }
+    
         const isValid=bcrypt.compare(req.body.password,user.password);
         if(!isValid){
             return next(createError(401,'invalid credentials'));
         }
-        const token=jwt.sign({id:user.id},process.env.JWT);
+        const token=jwt.sign({id:user.id,role:user.role},process.env.JWT);
         const {password,...others}=user;
         res.cookie('access_token',token,{maxAge:24*60*60*1000,httpOnly:true,sameSite:'none',secure:true}).status(200).json(user);
     }catch(err){

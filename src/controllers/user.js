@@ -26,8 +26,8 @@ import { Player } from "../models/player.js";
 // });
 export const getPlayer=async(req,res,next)=>{
     try{
-        
-         player=await Player.findOne({where:{
+        const { playerId } = req.params;
+        const player=await Player.findOne({where:{
             id:req.body.params.player_id
         }})
         if(!player){

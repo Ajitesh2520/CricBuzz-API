@@ -1,6 +1,9 @@
 import { Player } from "../models/Player.js";
 import { Team } from "../models/Team.js";
 export const createTeam=async(req,res,next)=>{
+    if(req.data?.role==='user'){
+        res.status(403).json({message:'unauthorized'})
+    }
     try{
         
         const team=await Team.create({

@@ -1,6 +1,9 @@
 import { Player } from "../models/Player.js";
 import { Team } from "../models/Team.js";
 export const createPlayer=async(req,res,next)=>{
+    if(req.data?.role==='user'){
+        res.status(403).json({message:'unauthorized'})
+    }
     try{
         const team=await Team.findOne({where:{
             name:req.body.team_name
@@ -9,6 +12,7 @@ export const createPlayer=async(req,res,next)=>{
             throw new Error("User team doesnt exist")
         }
         const player=await Player.create({
+            player_id:req.body.player_id,
             name:req.body.name,
             matches_played:req.body.matches_played,
             runs:req.body.runs,
