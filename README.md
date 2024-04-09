@@ -13,6 +13,7 @@
 - User Role Validation
 - Routes Updated with all the functionalities
 - Code Refactoring
+## Screenshots of Postman Requests
 ![get player stats](https://github.com/Ajitesh2520/Cricbuzz-API/assets/112803620/a7f9a1e9-7115-4c16-9741-1f42bb22ced5)
 ![Get match details](https://github.com/Ajitesh2520/Cricbuzz-API/assets/112803620/d18d8a92-4cfd-48b8-ac0c-648a438b3218)
 ![create team](https://github.com/Ajitesh2520/Cricbuzz-API/assets/112803620/397796b4-23b7-44c7-b95f-4f90ed0298bc)
