@@ -1,7 +1,7 @@
 import {UUIDV4, DataTypes} from 'sequelize';
 import { Player } from './Player.js';
 import sequelize from "../db/database.js";
-// import { Match } from './Match.js';
+
 export const Team= sequelize.define(
    "Team",
    {
@@ -17,9 +17,6 @@ export const Team= sequelize.define(
          allowNull: false,
          unique:true
       },
-      
-
-      
    },
    {
     tableName:'Team'
@@ -29,4 +26,3 @@ export const Team= sequelize.define(
 
 
 
-// Team.hasMany(Player, { foreignKey: 'team_id' });

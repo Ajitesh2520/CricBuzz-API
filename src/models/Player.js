@@ -37,16 +37,16 @@ export const Player= sequelize.define(
         defaultValue:0.0
      },
      team_id:{
-type:DataTypes.UUID,
-allowNull:false
+        type:DataTypes.UUID,
+        allowNull:false
      }
       
    },
    {
-    tableName:'Player'
+      tableName:'Player'
    }
    
 );
 
-// Player.belongsTo(Team, { foreignKey: 'team_id' }); 
+
 

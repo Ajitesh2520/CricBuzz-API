@@ -22,9 +22,10 @@ export const createPlayer=async(req,res,next)=>{
             
         })
         res.status(200).json(player)
-    }catch(e){
-console.log("error",e)
-res.status(400).send(e)
+    }
+    catch(e){
+        console.log("error",e)
+        res.status(400).send(e)
     }
 }
 export const getPlayer=async(req,res)=>{
@@ -36,7 +37,8 @@ export const getPlayer=async(req,res)=>{
             throw new Error("Player doesnt exist")
         }
         res.status(200).json(player)
-    }catch(e){
+    }
+    catch(e){
         console.log("error",e)
         res.status(400).send(e)
     }

@@ -11,8 +11,9 @@ export const createTeam=async(req,res,next)=>{
             
         })
         res.status(200).json(team)
-    }catch(e){
-console.log("error",e)
+    }
+    catch(e){
+        console.log("error",e)
     }
 }
 export const findTeam=async(req,res,next)=>{
@@ -26,8 +27,9 @@ export const findTeam=async(req,res,next)=>{
             
         })
         res.status(200).json(team)
-    }catch(e){
-console.log("error",e)
-res.status(400).send(e)
+    }
+    catch(e){
+        console.log("error",e)
+        res.status(400).send(e)
     }
 }
