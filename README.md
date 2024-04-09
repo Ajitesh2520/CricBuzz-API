@@ -10,3 +10,4 @@
 - Implemented JWT auth
 - API tested all routes
 - Implemented signin/signup functionality
+- User Role Validation
